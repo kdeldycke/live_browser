@@ -26,6 +26,18 @@ All these @jetable.org mails above are redirections to my true kevin@deldycke.co
 If you need more fake accounts, then go to: https://signup.live.com
 
 
+Windows Live API
+----------------
+
+I created an authorization token via the rwzwiybgu3hibsr@jetable.org account. Here are the details:
+
+  Application name : Live Browser
+  Client ID        : 000000004C05390D
+  Client secret    : fiMIb91LhBu9T5LPk4hPd2QaqKXLTY4a
+
+To get new tokens, go to: https://manage.dev.live.com
+
+
 Installation
 ------------
 
