@@ -6,6 +6,7 @@
         <title>Live Browser</title>
     </head>
     <body>
-        <h1>Hello World !</h1>
+        <p>${content}</p>
+        <a href="/get_token">Get an OAuth WRAP access token</a>
     </body>
 </html>
