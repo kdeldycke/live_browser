@@ -5,6 +5,8 @@ Live Browser is a web application which let you browse data provided by Microsof
 
 It is based on CherryPy and Mako.
 
+This was tested on Kubuntu 11.04.
+
 
 Test Accounts
 -------------
@@ -22,4 +24,32 @@ Windows Live accounts:
 All these @jetable.org mails above are redirections to my true kevin@deldycke.com mail address. They'll expire in a month from now.
 
 If you need more fake accounts, then go to: https://signup.live.com
+
+
+Installation
+------------
+
+1. Install system dependencies using your favorite package manager. Here is the
+   example for an Ubuntu machine:
+
+     $ apt-get install python
+
+2. Initialize the buildout environment:
+
+     $ python ./bootstrap.py --distribute
+
+3. Run buildout itself:
+
+     $ ./bin/buildout
+
+
+Embedded external projects
+--------------------------
+
+This tool uses external softwares, scripts, libraries and artworks:
+
+  Buildout's bootstrap.py
+  Copyright (c) 2006, Zope Corporation and Contributors
+  Distributed under the Zope Public License, version 2.1 (ZPL).
+  Source: http://svn.zope.org/repos/main/zc.buildout/trunk/bootstrap/bootstrap.py
 
