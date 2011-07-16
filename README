@@ -1,0 +1,25 @@
+Live Browser
+============
+
+Live Browser is a web application which let you browse data provided by Microsoft Live Messenger Connect API.
+
+It is based on CherryPy and Mako.
+
+
+Test Accounts
+-------------
+
+Here is a list of account created for tests. I'm sure they violates Microsoft's TOS but I need some real meat to play with the API
+
+Windows Live accounts:
+
+  Mail / Login                | Password
+  ---------------------------------------
+  rwzwiybgu3hibsr@jetable.org | 4ddc9a0df
+  sg6abk6c3yqprfj@jetable.org | 9850a6dbf
+  jz08gxgvffqrtfk@jetable.org | 253bb129e
+
+All these @jetable.org mails above are redirections to my true kevin@deldycke.com mail address. They'll expire in a month from now.
+
+If you need more fake accounts, then go to: https://signup.live.com
+
