@@ -108,6 +108,9 @@ def main():
     # Let our server honor proxied requests
     cherrypy.config.update({'tools.proxy.on': True})
 
+    # Gzip eveything that looks like text
+    cherrypy.config.update({'tools.gzip.mime_types': ['text/*', 'application/json', 'application/javascript']})
+
     # Load and apply the global config file
     conf_file = os.path.join(current_folder, CONF_NAME)
     cherrypy.config.update(conf_file)
