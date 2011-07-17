@@ -2,6 +2,7 @@
 
 ### Some global variables
 CONF_NAME = 'server.conf'
+LIB_DIRNAME = 'lib'
 TEMPLATES_DIRNAME = 'templates'
 
 
@@ -16,6 +17,11 @@ from mako.lookup   import TemplateLookup
 
 
 current_folder = os.path.dirname(__file__)
+
+# Import the local copy of the oauth2 module
+sys.path.insert(0, os.path.join(current_folder, LIB_DIRNAME, 'oauth2'))
+import oauth2
+
 # Transform relative path to absolute
 template_folder = os.path.join(current_folder, TEMPLATES_DIRNAME)
 
