@@ -69,6 +69,8 @@ class Root():
     @cherrypy.expose
     @cherrypy.tools.mako(filename="login.mako")
     def login(self):
+        # Force session expiration each time we are redirected to the login screen.
+        self.expire_session()
         return {}
 
 
