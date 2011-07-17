@@ -6,11 +6,13 @@ import json
 
 class Root():
 
+
     @cherrypy.expose
     @cherrypy.tools.mako(filename="base.mako")
     def default(self, *args, **kwargs):
         return { 'content': repr(self.call_ws('Contacts/AllContacts'))
                }
+
 
     def call_ws(self, query):
         request = urllib2.Request('http://apis.live.net/V4.1/cid-000000004C05390D/%s' % query)
@@ -21,6 +23,7 @@ class Root():
         body = response.read()
         return json.loads(body)
 
+
     @cherrypy.expose
     def get_token(self):
         params = {
@@ -30,6 +33,7 @@ class Root():
             'client_id': '4B26CC835745365D'
           }
         return "getting token...."
+
 
     @cherrypy.expose
     def callback(self, code):
