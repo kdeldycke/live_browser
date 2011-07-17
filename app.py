@@ -9,6 +9,10 @@ import oauth2 as oauth
 class Root():
 
 
+    # Our whole application is private: nobody can see anything of it unless he's authorized
+    _cp_config = {'tools.authorize.on': True}
+
+
     def call_ws(self, query):
         request = urllib2.Request('http://apis.live.net/V4.1/cid-000000004C05390D/%s' % query)
         request.add_header('Accept', 'application/json')

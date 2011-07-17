@@ -64,6 +64,27 @@ class MakoLoader(object):
 
 
 
+def authorize():
+    """ This method check session data and allow the current user to access a page or not
+        Source: http://tools.cherrypy.org/wiki/HandlerTool
+    """
+    PASSTHROUGH_URLS = ['/login', '/callback']
+    authorized = has_session = cherrypy.session.get('access_token')
+    if not authorized:
+        for url in PASSTHROUGH_URLS:
+            if cherrypy.request.path_info.startswith(url):
+                authorized = True
+                break
+    if authorized:
+        # Allow normal handler to run and display the page
+        return False
+    else:
+        raise cherrypy.HTTPRedirect('/login')
+        # Suppress normal handler from running
+        return True
+
+
+
 def main():
     # Set default network timeout
     socket.setdefaulttimeout(10)
@@ -86,6 +107,9 @@ def main():
     # Setup our Mako decorator
     loader = MakoLoader()
     cherrypy.tools.mako = cherrypy.Tool('on_start_resource', loader)
+
+    # Register a tool to check for authentication
+    cherrypy.tools.authorize = cherrypy._cptools.HandlerTool(authorize)
 
     # Import our application logic
     from app import Root
