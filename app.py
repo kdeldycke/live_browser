@@ -13,6 +13,11 @@ class Root():
     _cp_config = {'tools.authorize.on': True}
 
 
+    @cherrypy.expose
+    def default(self):
+        raise cherrypy.HTTPRedirect('/home')
+
+
     def call_ws(self, query):
         request = urllib2.Request('http://apis.live.net/V4.1/cid-000000004C05390D/%s' % query)
         request.add_header('Accept', 'application/json')
