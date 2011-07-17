@@ -67,7 +67,7 @@ def authorize():
     """ This method check session data and allow the current user to access a page or not
         Source: http://tools.cherrypy.org/wiki/HandlerTool
     """
-    PASSTHROUGH_URLS = ['/login', '/callback']
+    PASSTHROUGH_URLS = ['/static', '/favicon.', '/login', '/callback']
     authorized = has_session = cherrypy.session.get('access_token')
     if not authorized:
         for url in PASSTHROUGH_URLS:
@@ -88,8 +88,14 @@ def main():
     # Set default network timeout
     socket.setdefaulttimeout(10)
 
-    # Here is the default config for statix content
-    conf = {}
+    # Here is the default config for static content
+    conf = { '/static': { 'tools.staticdir.on' : True
+                        , 'tools.staticdir.dir': os.path.join(current_folder, 'static')
+                        }
+           , '/favicon.png': { 'tools.staticfile.on'      : True
+                             , 'tools.staticfile.filename': os.path.join(current_folder, 'static/favicon.png')
+                             }
+           }
     cherrypy.config.update(conf)
 
     # Enable sessions

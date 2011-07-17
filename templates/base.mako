@@ -8,6 +8,9 @@
             Live Browser &mdash;
             <%block name="title"/>
         </title>
+        <link rel="stylesheet" type="text/css" href="/static/style.css" type="text/css"/>
+        <link rel="icon" type="image/png" href="/favicon.png"/>
+        <link rel="shortcut icon" type="image/x-icon" href="/favicon.png"/>
     </head>
     <body>
         %if me:
