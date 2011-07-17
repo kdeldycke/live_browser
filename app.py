@@ -49,7 +49,8 @@ class Root():
 
 
     @cherrypy.expose
-    def login(self, login):
-        return repr(login)
+    @cherrypy.tools.mako(filename="login.mako")
+    def login(self):
+        return {}
 
 
