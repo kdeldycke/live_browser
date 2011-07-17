@@ -10,6 +10,7 @@ TEMPLATES_DIRNAME = 'templates'
 import os
 import socket
 import cherrypy
+import urlparse
 from mako.template import Template
 from mako.lookup   import TemplateLookup
 
@@ -84,6 +85,17 @@ def authorize():
 
 
 
+def force_https():
+    """ Based on: http://tools.cherrypy.org/wiki/ApacheSSL
+    """
+    url = urlparse.urlparse(cherrypy.url())
+    if url[0] != 'https':
+        secure_url = urlparse.urlunsplit(('https', url[1], url[2],
+                                          url[3], url[4]))
+        raise cherrypy.HTTPRedirect(secure_url)
+
+
+
 def main():
     # Set default network timeout
     socket.setdefaulttimeout(10)
@@ -106,7 +118,17 @@ def main():
                             })
 
     # Let our server honor proxied requests
-    cherrypy.config.update({'tools.proxy.on': True})
+#    cherrypy.config.update({'tools.proxy.on': True})
+
+
+    # Force HTTPS all over the place
+    cherrypy.config.update( { 'server.ssl_certificate': os.path.join(current_folder, 'ssl/self-signed.pem')
+                            , 'server.ssl_private_key': os.path.join(current_folder, 'ssl/private.key')
+                            })
+
+    # Force all request to use HTTPS URL scheme
+    cherrypy.tools.secure = cherrypy.Tool('before_handler', force_https)
+    cherrypy.config.update({'tools.secure.on': True})
 
     # Gzip eveything that looks like text
     cherrypy.config.update({'tools.gzip.mime_types': ['text/*', 'application/json', 'application/javascript']})

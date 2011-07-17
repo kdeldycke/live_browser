@@ -44,7 +44,7 @@ Installation
 1. Install system dependencies using your favorite package manager. Here is the
    example for an Ubuntu machine:
 
-     $ apt-get install python python-httplib2
+     $ apt-get install python python-httplib2 python-pyopenssl
 
 2. Initialize the buildout environment:
 

@@ -8,6 +8,9 @@ eggs/
 parts/
 .installed.cfg
 
+# Generated files
+ssl/*
+
 # VIM
 *.swp
 
