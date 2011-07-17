@@ -40,7 +40,7 @@ class Root():
           # Save the current credentials to the session
           for (k, v) in creds.items():
               cherrypy.session[k] = v
-          #raise cherrypy.HTTPRedirect('/home')
+          raise cherrypy.HTTPRedirect('/home')
 
 
     @cherrypy.expose
