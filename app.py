@@ -37,7 +37,9 @@ class Root():
           body = response.read()
           creds = json.loads(body)
           print 'Access token exahnged to: %r' % creds
-          # TODO: Save the current credentials to the session
+          # Save the current credentials to the session
+          for (k, v) in creds.items():
+              cherrypy.session[k] = v
           #raise cherrypy.HTTPRedirect('/home')
 
 
