@@ -49,3 +49,9 @@ class Root():
         return {}
 
 
+    @cherrypy.expose
+    @cherrypy.tools.mako(filename="home.mako")
+    def home(self):
+        return {}
+
+
