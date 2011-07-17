@@ -3,7 +3,7 @@ import urllib
 import urllib2
 import json
 import httplib2
-httplib2.debuglevel = 1     
+#httplib2.debuglevel = 1
 from httplib2 import Http
 from urllib import urlencode
 
@@ -30,11 +30,13 @@ class Root():
                   #   error: Error -3 while decompressing data: incorrect header check
                   , 'Accept-Encoding': 'identity'
                   }
-        url = '%s/%s?%s' % (API_URL, query, urlencode(params))
+        query_url = full_url = '%s/%s' % (API_URL, query)
+        cherrypy.log('Calling the web service at %s' % query_url, 'APP')
+        if params:
+            full_url = '%s?%s' % (query_url, urlencode(params))
         h = Http()
-        response, content = h.request(url, "GET", headers=headers)
-        print repr(response)
-        print repr(content)
+        response, content = h.request(full_url, "GET", headers=headers)
+        cherrypy.log('Web service returned: %r' % [response, content], 'APP')
         return json.loads(content)
 
 
@@ -44,7 +46,7 @@ class Root():
                 * http://msdn.microsoft.com/en-us/library/hh243649.aspx
                 * http://msdn.microsoft.com/en-us/library/hh243647.aspx
           """
-          print 'Got a call back code: %r' % code
+          cherrypy.log('Got a callback code: %r' % code, 'APP')
           # We've got a code, we're ready to exchange it to a true access token
           params = {
               'client_id': '000000004C05390D',
@@ -59,7 +61,7 @@ class Root():
           response = urllib2.urlopen(request)
           body = response.read()
           creds = json.loads(body)
-          print 'Access token exahnged to: %r' % creds
+          cherrypy.log('Callback code exchanged to: %r' % creds, 'APP')
           # Save the current credentials to the session
           for (k, v) in creds.items():
               cherrypy.session[k] = v
