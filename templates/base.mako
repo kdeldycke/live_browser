@@ -11,5 +11,18 @@
     </head>
     <body>
         ${next.body()}
+        <div>
+                <p>Debug info:</p>
+                <ul>
+                    <li>Number of active session: ${len(cherrypy.session)}</li>
+                </ul>
+                <p>Session info:</p>
+                <ul>
+                    <li>Session ID: ${cherrypy.session.id}</li>
+                    %for (k, v) in cherrypy.session.items():
+                        <li>${k}: ${v}</li>
+                    %endfor
+                </ul>
+        </div>
     </body>
 </html>
