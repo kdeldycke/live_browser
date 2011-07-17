@@ -11,5 +11,7 @@
         <form action="/login">
            <input type="text" id="login" name="login"/>
         </form>
+        <p>${content}</p>
+        <a href="/get_token">Get an OAuth WRAP access token</a>
     </body>
 </html>
