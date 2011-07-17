@@ -9,6 +9,8 @@ TEMPLATES_DIRNAME = 'templates'
 # Import all stuff we need
 import os
 import socket
+import logging
+from   logging import handlers
 import cherrypy
 import urlparse
 from mako.template import Template
@@ -150,6 +152,28 @@ def main():
     # Prepare the app
     app_root = Root()
     app = cherrypy.tree.mount(app_root, config=conf)
+
+    # Change the default logger to a one that rotate
+    # Based on: http://www.cherrypy.org/wiki/Logging#CustomHandlers
+    MAX_LOG_SIZE = 10 * 1024 * 1024
+    LOGS_TO_KEEP = 100
+    # Set default log files
+    cherrypy.config.update( { 'log.screen'     : False
+                            #, 'log.access_file': os.path.join(current_folder, 'logs/access.log')
+                            #, 'log.error_file' : os.path.join(current_folder, 'logs/cherrypy.log')
+                            })
+    # Make a new RotatingFileHandler for each type of log
+    logs =  [ ('error' , 'logs/cherrypy.log')
+            , ('access', 'logs/access.log'  )
+            ]
+    log = app.log
+    for (log_type, log_path) in logs:
+        # Remove the default FileHandlers if present.
+        file_path = os.path.join(current_folder, log_path)
+        h = handlers.RotatingFileHandler(file_path, 'a', MAX_LOG_SIZE, LOGS_TO_KEEP)
+        h.setLevel(logging.DEBUG)
+        h.setFormatter(cherrypy._cplogging.logfmt)
+        getattr(log, '%s_log' % log_type).addHandler(h)
 
     # Start the engine
     cherrypy.engine.start()
