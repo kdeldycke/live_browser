@@ -13,7 +13,8 @@
         %if me:
            <div>
               Logged in as: ${me['name']} |
-              <a href="${me['link']}" target="_blank">Windows Live profile</a>
+              <a href="${me['link']}" target="_blank">Windows Live profile</a> |
+              <a href="/logout">log out</a>
            </div>
         %endif
         ${next.body()}

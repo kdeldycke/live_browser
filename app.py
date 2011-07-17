@@ -73,6 +73,22 @@ class Root():
 
 
     @cherrypy.expose
+    def logout(self):
+        self.expire_session()
+        raise cherrypy.HTTPRedirect('/login')
+
+
+    def expire_session(self):
+        """ Helper method to expire the current session
+        """
+        try:
+            cherrypy.session.delete()
+        except KeyError:
+            pass
+        cherrypy.lib.sessions.expire()
+
+
+    @cherrypy.expose
     @cherrypy.tools.mako(filename="home.mako")
     def home(self):
         me = self.call_ws('me')
