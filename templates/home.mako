@@ -4,3 +4,7 @@
 
 <h1>Welcome home !</h1>
 
+<h2>My contacts:</h2>
+
+<p>${repr(contacts)}</p>
+

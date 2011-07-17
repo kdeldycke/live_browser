@@ -10,7 +10,6 @@ TEMPLATES_DIRNAME = 'templates'
 import os
 import socket
 import cherrypy
-import oauth2
 from mako.template import Template
 from mako.lookup   import TemplateLookup
 
