@@ -30,6 +30,10 @@ class Root():
 
     @cherrypy.expose
     def callback(self, code):
+          """ See documentation and reference there:
+                * http://msdn.microsoft.com/en-us/library/hh243649.aspx
+                * http://msdn.microsoft.com/en-us/library/hh243647.aspx
+          """
           print 'Got a call back code: %r' % code
           # We've got a code, we're ready to exchange it to a true access token
           params = {
