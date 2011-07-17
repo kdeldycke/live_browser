@@ -105,6 +105,9 @@ def main():
                             #, 'tools.sessions.storage_path': os.path.join(current_folder, 'sessions')
                             })
 
+    # Let our server honor proxied requests
+    cherrypy.config.update({'tools.proxy.on': True})
+
     # Load and apply the global config file
     conf_file = os.path.join(current_folder, CONF_NAME)
     cherrypy.config.update(conf_file)
