@@ -72,6 +72,13 @@ def main():
     conf = {}
     cherrypy.config.update(conf)
 
+    # Enable sessions
+    cherrypy.config.update( { 'tools.sessions.on'          : True
+                            , 'tools.sessions.timeout'     : 60
+                            #, 'tools.sessions.storage_type': "file"
+                            #, 'tools.sessions.storage_path': os.path.join(current_folder, 'sessions')
+                            })
+
     # Load and apply the global config file
     conf_file = os.path.join(current_folder, CONF_NAME)
     cherrypy.config.update(conf_file)
