@@ -75,8 +75,7 @@ class Root():
     @cherrypy.expose
     @cherrypy.tools.mako(filename="home.mako")
     def home(self):
-        contacts = self.call_ws()
-        return { 'contacts': contacts
+        me = self.call_ws('me')
+        return { 'me': me
                }
-               
 
