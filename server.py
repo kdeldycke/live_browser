@@ -9,6 +9,7 @@ TEMPLATES_DIRNAME = 'templates'
 
 # Import all stuff we need
 import os
+import sys
 import socket
 import cherrypy
 from mako.template import Template

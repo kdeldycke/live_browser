@@ -1,0 +1,3 @@
+[submodule "lib/oauth2"]
+	path = lib/oauth2
+	url = https://github.com/simplegeo/python-oauth2.git
