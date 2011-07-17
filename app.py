@@ -1,6 +1,8 @@
 import cherrypy
+import urllib
 import urllib2
 import json
+import oauth2 as oauth
 
 
 
@@ -10,7 +12,7 @@ class Root():
     @cherrypy.expose
     @cherrypy.tools.mako(filename="base.mako")
     def default(self, *args, **kwargs):
-        return { 'content': repr(self.call_ws('Contacts/AllContacts'))
+        return { 'content': 'Blah!'
                }
 
 
@@ -25,19 +27,25 @@ class Root():
 
 
     @cherrypy.expose
-    def get_token(self):
-        params = {
-            'redirect_uri': 'http://vps.deldycke.com:8081/callback',
-            'response_type': 'code',
-            'scope': 'SCOPES',
-            'client_id': '4B26CC835745365D'
-          }
-        return "getting token...."
-
-
-    @cherrypy.expose
     def callback(self, code):
-        print 'Got a call back code: %r' % code
+          print 'Got a call back code: %r' % code
+          # We've got a code, we're ready to exchange it to a true access token
+          params = {
+              'client_id': '000000004C05390D',
+              'redirect_uri': '%s/callback' % cherrypy.request.base,
+              'client_secret': 'fiMIb91LhBu9T5LPk4hPd2QaqKXLTY4a',
+              'code': code,
+              'grant_type': 'authorization_code'
+              }
+          url = 'https://oauth.live.com/token'
+          post_data = urllib.urlencode(params)
+          request = urllib2.Request(url, post_data)
+          response = urllib2.urlopen(request)
+          body = response.read()
+          creds = json.loads(body)
+          print 'Access token exahnged to: %r' % creds
+          # TODO: Save the current credentials to the session
+          #raise cherrypy.HTTPRedirect('/home')
 
 
     @cherrypy.expose
