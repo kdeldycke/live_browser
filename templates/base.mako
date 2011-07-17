@@ -7,5 +7,9 @@
     </head>
     <body>
         <h1>Hello World !</h1>
+        <p>Login:</p>
+        <form action="/login">
+           <input type="text" id="login" name="login"/>
+        </form>
     </body>
 </html>

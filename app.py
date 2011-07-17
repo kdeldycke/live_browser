@@ -8,3 +8,6 @@ class Root():
     def default(self, *args, **kwargs):
         return {}
 
+    @cherrypy.expose
+    def login(self, login):
+        return repr(login)
