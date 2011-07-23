@@ -70,7 +70,12 @@ def authorize():
     """ This method check session data and allow the current user to access a page or not
         Source: http://tools.cherrypy.org/wiki/HandlerTool
     """
-    PASSTHROUGH_URLS = ['/static', '/favicon.', '/login', '/callback']
+    PASSTHROUGH_URLS = [
+        # Common assets
+        '/static', '/css', '/js', '/favicon.',
+        # Content pages
+        '/login', '/callback'
+        ]
     authorized = has_session = cherrypy.session.get('access_token')
     if not authorized:
         for url in PASSTHROUGH_URLS:
