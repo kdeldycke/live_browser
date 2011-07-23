@@ -37,7 +37,10 @@ class Root():
         h = Http()
         response, content = h.request(full_url, "GET", headers=headers)
         cherrypy.log('Web service returned: %r' % [response, content], 'APP')
-        return json.loads(content)
+        data = json.loads(content)
+        if type(data) is type({}) and 'data' in data:
+            data = data['data']
+        return data
 
 
     @cherrypy.expose
@@ -95,7 +98,7 @@ class Root():
     @cherrypy.expose
     @cherrypy.tools.mako(filename="home.mako")
     def home(self):
-        me = self.call_ws('me')
-        return { 'me': me
+        return { 'me': self.call_ws('/me')
+               , 'contacts': self.call_ws('/me/contacts')
                }
 
