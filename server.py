@@ -140,7 +140,7 @@ def main():
     cherrypy.config.update(conf_file)
 
     # Set the default error page
-    cherrypy.config.update({'error_page.default': os.path.join(current_folder, 'static/404.html')})
+    cherrypy.config.update({'error_page.default': os.path.join(current_folder, 'static/error.html')})
 
     # Setup our Mako decorator
     loader = MakoLoader()
