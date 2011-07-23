@@ -106,9 +106,6 @@ def main():
     conf = { '/static': { 'tools.staticdir.on' : True
                         , 'tools.staticdir.dir': os.path.join(current_folder, 'static')
                         }
-           , '/favicon.png': { 'tools.staticfile.on'      : True
-                             , 'tools.staticfile.filename': os.path.join(current_folder, 'static/favicon.png')
-                             }
            }
     cherrypy.config.update(conf)
 
