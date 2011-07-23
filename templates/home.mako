@@ -1,5 +1,7 @@
 <%inherit file="base.mako"/>
 
+<%namespace name="utils" file="utils.mako"/>
+
 <%block name="title">Home</%block>
 
 
@@ -10,7 +12,7 @@
 
 <ul>
     %for (k, v) in me.items():
-        <li>${k}: ${v}</li>
+        <li>${utils.render_id(k)}: ${v}</li>
     %endfor
 </ul>
 
