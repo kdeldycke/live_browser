@@ -106,6 +106,12 @@ def main():
     conf = { '/static': { 'tools.staticdir.on' : True
                         , 'tools.staticdir.dir': os.path.join(current_folder, 'static')
                         }
+           , '/css':    { 'tools.staticdir.on' : True
+                        , 'tools.staticdir.dir': os.path.join(current_folder, 'static', 'css')
+                        }
+           , '/js':     { 'tools.staticdir.on' : True
+                        , 'tools.staticdir.dir': os.path.join(current_folder, 'static', 'js')
+                        }
            }
     cherrypy.config.update(conf)
 
