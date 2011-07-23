@@ -5,7 +5,7 @@
 <%block name="title">Home</%block>
 
 
-<h1>Welcome home !</h1>
+<h1>${profile_info.get('name')}'s profile</h1>
 
 
 <h2>Profile details</h2>
@@ -23,7 +23,7 @@
             for start in xrange(0, len(seq), lenght):
                 yield dict(seq[start:start+lenght])
     %>
-    %for page_content in paginate(me, 5):
+    %for page_content in paginate(profile_info, 5):
         <div class="result">
             ${utils.render_as_list(page_content)}
         </div>
@@ -31,11 +31,15 @@
 </div>
 
 
-<h2>My contacts</h2>
+<h2>Contacts</h2>
 
-<ul>
-    %for c in contacts:
-        <li>${c.get('name')}</li>
-    %endfor
-</ul>
+%if 'error' in contacts:
+    ${utils.render_error(contacts)}
+%else:
+    <ul>
+        %for c in contacts:
+            <li><a href="/profile/${c.get('user_id')}">${c.get('name')}</a></li>
+        %endfor
+    </ul>
+%endif
 

@@ -21,3 +21,11 @@
         ${repr(data)}
     %endif
 </%def>
+
+<%def name="render_error(error)">
+    <%
+        error = error['error']
+    %>
+    <p class='error'>${error['message']} (code: <code>${error['code']}</code>)</p>
+</%def>
+

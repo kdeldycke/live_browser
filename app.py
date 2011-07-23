@@ -42,8 +42,12 @@ class Root():
         response, content = h.request(full_url, "GET", headers=headers)
         cherrypy.log('Web service returned: %r' % [response, content], 'APP')
         data = json.loads(content)
-        if type(data) is type({}) and 'data' in data:
-            data = data['data']
+        if type(data) is type({}):
+            if 'data' in data:
+                data = data['data']
+#            elif 'error' in data:
+#                # TODO: raise a proper exception ?
+#                data = '%s - %s' % (data['error']['code'], data['error']['message'])
         return data
 
 
@@ -106,9 +110,19 @@ class Root():
 
 
     @cherrypy.expose
-    @cherrypy.tools.mako(filename="home.mako")
     def home(self):
-        return { 'me': self.call_ws('/me')
-               , 'contacts': self.call_ws('/me/contacts')
-               }
+        raise cherrypy.HTTPRedirect('/profile/me')
+
+
+    @cherrypy.expose
+    @cherrypy.tools.mako(filename="profile.mako")
+    def profile(self, user_id):
+        template_var = {}
+        me = self.call_ws('/me')
+        template_var.update({'me': me})
+        if user_id == 'me':
+            user_id = me.get('id')
+        template_var.update({'profile_info': self.call_ws('/%s' % user_id)})
+        template_var.update({'contacts': self.call_ws('/%s/contacts' % user_id)})
+        return template_var
 
