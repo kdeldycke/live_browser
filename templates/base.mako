@@ -26,7 +26,7 @@
                 <ul>
                     <li>Number of active session: ${len(cherrypy.session)}</li>
                 </ul>
-                <p>Session info:</p>
+                <p>Session data:</p>
                 <ul>
                     <li>Session ID: ${cherrypy.session.id}</li>
                     %for (k, v) in cherrypy.session.items():
