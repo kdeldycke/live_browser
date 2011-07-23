@@ -22,8 +22,11 @@
 
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
     <link rel="stylesheet" href="css/style.css?v=1">
     <link rel="stylesheet" media="handheld" href="css/handheld.css?v=1">
+    <link rel="stylesheet" media="handheld" href="css/pagination.css?v=1">
+
     <script src="js/libs/modernizr-1.7.min.js"></script>
 </head>
 <body>
@@ -62,6 +65,7 @@
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
     <script>!window.jQuery && document.write(unescape('%3Cscript src="js/libs/jquery-1.5.1.min.js"%3E%3C/script%3E'))</script>
+    <script src="js/jquery.pagination.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/script.js"></script>
 

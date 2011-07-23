@@ -81,6 +81,11 @@ This tool uses external softwares, scripts, libraries and artworks:
   Components distributed under several license (MIT, BSD, GPL and Public Domain).
   Source: http://html5boilerplate.com
 
+  jQuery Pagination plugin
+  Copyright 2010-2011, birke@d-scribe.de
+  Released under the GNU GPL v2 license.
+  Source: https://github.com/gbirke/jquery_pagination
+
   Buildout's bootstrap.py
   Copyright (c) 2006, Zope Corporation and Contributors
   Distributed under the Zope Public License, version 2.1 (ZPL).
