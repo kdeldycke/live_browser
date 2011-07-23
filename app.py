@@ -82,7 +82,7 @@ class Root():
         self.expire_session()
         # Build up the URL for authentication on Windows Live
         # List of scopes is available at: http://msdn.microsoft.com/en-us/library/hh243646.aspx
-        SCOPES = ['wl.signin', 'wl.basic']
+        SCOPES = ['wl.signin', 'wl.basic', 'wl.birthday', 'wl.work_profile', 'wl.emails', 'wl.postal_addresses', 'wl.phone_numbers']
         callback_url = '%s/callback' % cherrypy.request.base
         auth_url = "https://oauth.live.com/authorize?client_id=%s&scope=%s&response_type=code&redirect_uri=%s" % (self.APP_CID, '%20'.join(SCOPES), callback_url)
         return { 'auth_url': auth_url
