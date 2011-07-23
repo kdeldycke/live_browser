@@ -122,6 +122,9 @@ def main():
            , '/js':     { 'tools.staticdir.on' : True
                         , 'tools.staticdir.dir': os.path.join(current_folder, 'static', 'js')
                         }
+           , '/favicon.ico': { 'tools.staticfile.on'      : True
+                             , 'tools.staticfile.filename': os.path.join(current_folder, 'favicon.ico')
+                             }
            }
     cherrypy.config.update(conf)
 
