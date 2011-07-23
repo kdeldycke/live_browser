@@ -15,6 +15,10 @@ class Root():
     # Our whole application is private: nobody can see anything of it unless he's authorized
     _cp_config = {'tools.authorize.on': True}
 
+    # App IDi and secret we got from the Windows Live Dev Center
+    APP_CID = "000000004C05390D"
+    APP_SECRET = "fiMIb91LhBu9T5LPk4hPd2QaqKXLTY4a"
+
 
     @cherrypy.expose
     def default(self):
@@ -52,9 +56,9 @@ class Root():
           cherrypy.log('Got a callback code: %r' % code, 'APP')
           # We've got a code, we're ready to exchange it to a true access token
           params = {
-              'client_id': '000000004C05390D',
+              'client_id': self.APP_CID,
               'redirect_uri': '%s/callback' % cherrypy.request.base,
-              'client_secret': 'fiMIb91LhBu9T5LPk4hPd2QaqKXLTY4a',
+              'client_secret': self.APP_SECRET,
               'code': code,
               'grant_type': 'authorization_code'
               }
@@ -76,7 +80,13 @@ class Root():
     def login(self):
         # Force session expiration each time we are redirected to the login screen.
         self.expire_session()
-        return {}
+        # Build up the URL for authentication on Windows Live
+        # List of scopes is available at: http://msdn.microsoft.com/en-us/library/hh243646.aspx
+        SCOPES = ['wl.signin', 'wl.basic']
+        callback_url = '%s/callback' % cherrypy.request.base
+        auth_url = "https://oauth.live.com/authorize?client_id=%s&scope=%s&response_type=code&redirect_uri=%s" % (self.APP_CID, '%20'.join(SCOPES), callback_url)
+        return { 'auth_url': auth_url
+               }
 
 
     @cherrypy.expose
