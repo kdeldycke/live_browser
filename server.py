@@ -107,6 +107,11 @@ def main():
     # Set default network timeout
     socket.setdefaulttimeout(10)
 
+    # Git doesn't seems to track empty directory so let's create one for the logs
+    log_dir = os.path.join(current_folder, 'logs')
+    if not os.path.exists(log_dir):
+        os.mkdir(log_dir)
+
     # Here is the default config for static content
     conf = { '/static': { 'tools.staticdir.on' : True
                         , 'tools.staticdir.dir': os.path.join(current_folder, 'static')
@@ -128,8 +133,7 @@ def main():
                             })
 
     # Let our server honor proxied requests
-#    cherrypy.config.update({'tools.proxy.on': True})
-
+    # cherrypy.config.update({'tools.proxy.on': True})
 
     # Force HTTPS all over the place
     cherrypy.config.update( { 'server.ssl_certificate': os.path.join(current_folder, 'ssl/self-signed.pem')
