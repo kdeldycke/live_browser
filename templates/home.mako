@@ -10,11 +10,7 @@
 
 <h2>Profile details</h2>
 
-<ul>
-    %for (k, v) in me.items():
-        <li>${utils.render_id(k)}: ${v}</li>
-    %endfor
-</ul>
+${utils.render_as_list(me)}
 
 
 <h2>My contacts</h2>
