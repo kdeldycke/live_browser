@@ -36,7 +36,7 @@
         <header>
             %if me:
                 <div>
-                    Logged in as: ${me['name']} |
+                    Logged in as: <a href="/home">${me['name']}</a> |
                     <a href="${me['link']}" target="_blank">Windows Live profile</a> |
                     <a href="/logout">log out</a>
                 </div>
