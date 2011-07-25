@@ -15,13 +15,13 @@ Here is a list of account created for tests. I'm sure they violates Microsoft's 
 
 Windows Live accounts:
 
-  Mail / Login                | Password
-  ---------------------------------------
-  rwzwiybgu3hibsr@jetable.org | 4ddc9a0df
-  sg6abk6c3yqprfj@jetable.org | 9850a6dbf
-  jz08gxgvffqrtfk@jetable.org | 253bb129e
+  | Mail / Login                | Password  |
+  |:----------------------------|:----------|
+  | rwzwiybgu3hibsr@jetable.org | 4ddc9a0df |
+  | sg6abk6c3yqprfj@jetable.org | 9850a6dbf |
+  | jz08gxgvffqrtfk@jetable.org | 253bb129e |
 
-All these @jetable.org mails above are redirections to my true kevin@deldycke.com mail address. They'll expire in a month from now.
+All these `@jetable.org` mails above are redirections to my true `kevin@deldycke.com` mail address. They'll expire in a month from now.
 
 If you need more fake accounts, then go to: https://signup.live.com
 
@@ -29,11 +29,11 @@ If you need more fake accounts, then go to: https://signup.live.com
 Windows Live API
 ----------------
 
-I created an authorization token via the rwzwiybgu3hibsr@jetable.org account. Here are the details:
+I created an authorization token via the `rwzwiybgu3hibsr@jetable.org` account. Here are the details:
 
-  Application name : Live Browser
-  Client ID        : 000000004C05390D
-  Client secret    : fiMIb91LhBu9T5LPk4hPd2QaqKXLTY4a
+  * Application name : Live Browser
+  * Client ID        : 000000004C05390D
+  * Client secret    : fiMIb91LhBu9T5LPk4hPd2QaqKXLTY4a
 
 To get new tokens, go to: https://manage.dev.live.com
 
@@ -63,6 +63,7 @@ HTML5 Boilerplate
 -----------------
 
 The HTML5 Boilerplate code included was generated on http://html5boilerplate.com with the following parameters:
+
   * Conditional classes: All IE classes
   * Mobile: Handheld stylesheet
   * Javascript: jQuery minified
@@ -76,18 +77,18 @@ Embedded external projects
 
 This tool uses external softwares, scripts, libraries and artworks:
 
-  HTML5 Boilerplate
-  Copyright (c) 2010-2011, HTML5 Boilerplate project & contributors
-  Components distributed under several license (MIT, BSD, GPL and Public Domain).
+  HTML5 Boilerplate  
+  Copyright (c) 2010-2011, HTML5 Boilerplate project & contributors  
+  Components distributed under several license (MIT, BSD, GPL and Public Domain).  
   Source: http://html5boilerplate.com
 
-  jQuery Pagination plugin
-  Copyright 2010-2011, birke@d-scribe.de
-  Released under the GNU GPL v2 license.
+  jQuery Pagination plugin  
+  Copyright 2010-2011, birke@d-scribe.de  
+  Released under the GNU GPL v2 license.  
   Source: https://github.com/gbirke/jquery_pagination
 
-  Buildout's bootstrap.py
-  Copyright (c) 2006, Zope Corporation and Contributors
-  Distributed under the Zope Public License, version 2.1 (ZPL).
+  Buildout's bootstrap.py  
+  Copyright (c) 2006, Zope Corporation and Contributors  
+  Distributed under the Zope Public License, version 2.1 (ZPL).  
   Source: http://svn.zope.org/repos/main/zc.buildout/trunk/bootstrap/bootstrap.py
 
