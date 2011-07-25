@@ -15,11 +15,11 @@ Here is a list of account created for tests. I'm sure they violates Microsoft's 
 
 Windows Live accounts:
 
-  | Mail / Login                | Password  |
-  |:----------------------------|:----------|
-  | rwzwiybgu3hibsr@jetable.org | 4ddc9a0df |
-  | sg6abk6c3yqprfj@jetable.org | 9850a6dbf |
-  | jz08gxgvffqrtfk@jetable.org | 253bb129e |
+    | Mail / Login                | Password  |
+    |:----------------------------|:----------|
+    | rwzwiybgu3hibsr@jetable.org | 4ddc9a0df |
+    | sg6abk6c3yqprfj@jetable.org | 9850a6dbf |
+    | jz08gxgvffqrtfk@jetable.org | 253bb129e |
 
 All these `@jetable.org` mails above are redirections to my true `kevin@deldycke.com` mail address. They'll expire in a month from now.
 
