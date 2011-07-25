@@ -51,15 +51,15 @@
 
         <footer>
             <div class="error">
-                <p>Debug info:</p>
+                <h4>Debug info</h4>
                 <ul>
-                    <li>Number of active session: ${len(cherrypy.session)}</li>
+                    <li><strong>Number of active session</strong>: <code>${len(cherrypy.session)}</code></li>
                 </ul>
-                <p>Session data:</p>
+                <h4>Session data</h4>
                 <ul>
-                    <li>Session ID: ${cherrypy.session.id}</li>
+                    <li><strong>Session ID</strong>: ${cherrypy.session.id}</li>
                     %for (k, v) in cherrypy.session.items():
-                        <li>${k}: ${v}</li>
+                        <li><strong>${k}</strong>: <code>${v}</code></li>
                     %endfor
                 </ul>
             </div>
