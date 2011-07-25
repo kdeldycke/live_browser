@@ -40,7 +40,7 @@
                 <div>
                     Logged in as: <a href="/home">${me['name']}</a> |
                     <a href="${me['link']}" target="_blank">Windows Live profile</a> |
-                    <a href="/logout">log out</a>
+                    <a href="/logout">Log out</a>
                 </div>
             %endif
         </header>
