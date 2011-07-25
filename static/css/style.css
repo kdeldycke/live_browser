@@ -86,10 +86,14 @@ a:hover { color: #036; }
     \\ ========================================== //
 */
 
+
 a {
 text-decoration: none;
 }
 
+a:hover {
+text-decoration: underline;
+}
 
 header {
 background: #456;
@@ -116,7 +120,7 @@ font-weight: bold;
 }
 
 header a:hover {
-text-decoration: underline;
+text-decoration: none;
 }
 
 
