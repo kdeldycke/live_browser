@@ -36,13 +36,15 @@
     <div id="container">
 
         <header>
-            %if me:
-                <div>
+            <div>
+                %if me:
                     Logged in as: <a href="/home">${me['name']}</a> |
                     <a href="${me['link']}" target="_blank">Windows Live profile</a> |
                     <a href="/logout">Log out</a>
-                </div>
-            %endif
+                %else:
+                    <a href="/login">Log in</a>
+                %endif
+            </div>
         </header>
 
         <div id="main" role="main">
