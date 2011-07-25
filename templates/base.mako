@@ -36,7 +36,7 @@
     <div id="container">
 
         <header>
-            <h1>Live Browser</h1>
+            <h1><a href="/home">Live Browser</a></h1>
             <div class="tools">
                 %if me:
                     Logged in as: <a href="/home">${me['name']}</a> |
