@@ -1,5 +1,10 @@
 <%def name="render_id(id_string)">
-    ${id_string.title().replace('_', ' ')}
+    %if id_string.startswith('_'):
+        ## Print internal MongoDB data label as-is
+        ${id_string}
+    %else:
+        ${id_string.title().replace('_', ' ')}
+    %endif
 </%def>
 
 <%def name="render_as_list(data)">
