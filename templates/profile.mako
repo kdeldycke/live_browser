@@ -29,6 +29,7 @@
         </div>
     %endfor
 </div>
+<div class="clearfix"></div>
 
 
 <h2>Contacts</h2>
