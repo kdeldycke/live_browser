@@ -95,7 +95,19 @@ header {
 background: #456;
 color: #eee;
 padding: 1em;
-text-align: right;
+}
+
+header h1 {
+color: #fff;
+text-align: left;
+margin: 0;
+text-shadow: 1px 1px 1px #000;
+}
+
+header .tools {
+position: absolute;
+top: 1em;
+right: 1em;
 }
 
 header a {

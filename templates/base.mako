@@ -36,7 +36,8 @@
     <div id="container">
 
         <header>
-            <div>
+            <h1>Live Browser</h1>
+            <div class="tools">
                 %if me:
                     Logged in as: <a href="/home">${me['name']}</a> |
                     <a href="${me['link']}" target="_blank">Windows Live profile</a> |
