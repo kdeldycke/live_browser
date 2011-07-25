@@ -23,8 +23,10 @@
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-    <link rel="stylesheet" href="css/pagination.css?v=1">
     <link rel="stylesheet" href="css/style.css?v=1">
+    <link rel="stylesheet" href="css/pagination.css?v=1">
+    <link rel="stylesheet" href="css/typography.css?v=1">
+
     <link rel="stylesheet" media="handheld" href="css/handheld.css?v=1">
 
     <script src="js/libs/modernizr-1.7.min.js"></script>

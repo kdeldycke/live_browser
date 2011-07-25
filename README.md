@@ -87,6 +87,11 @@ This tool uses external softwares, scripts, libraries and artworks:
     Released under the GNU GPL v2 license.  
     Source: https://github.com/gbirke/jquery_pagination
 
+    Blueprint CSS framework 1.0.1  
+    Copyright 2007 - 2010 blueprintcss.org  
+    Released under a custom public license.  
+    Source: https://github.com/joshuaclayton/blueprint-css
+
     Buildout's bootstrap.py  
     Copyright (c) 2006, Zope Corporation and Contributors  
     Distributed under the Zope Public License, version 2.1 (ZPL).  
