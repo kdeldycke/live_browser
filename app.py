@@ -25,7 +25,7 @@ class Root():
         DB_NAME = 'live_browser'
         connection = pymongo.Connection("localhost", 27017)
         if DB_NAME not in connection.database_names():
-            cherrypy.log("There is no %r database in MongoDB." % DB_NAME, 'APP')
+            cherrypy.log("There is no %r database in MongoDB." % DB_NAME, 'INFO')
         return connection[DB_NAME]
 
     db = property(get_db)
@@ -39,7 +39,7 @@ class Root():
         q_elements = query.split('/')[1:]
         # XXX Do not try to save for now query we haven't validated yet
         if len(q_elements) > 1 or q_elements[0] == 'me':
-            cherrypy.log("Query schema had not been validated yet. Skip database persistency.", 'APP')
+            cherrypy.log("Query schema had not been validated yet. Skip database persistency.", 'INFO')
             return None
         # Get the collection
         collection_name = 'user'
@@ -51,7 +51,7 @@ class Root():
     def save_to_db(self, query, data):
         """ Save a request made to the Live API to the local persistent DB
         """
-        cherrypy.log("Savin to the databaseg %r data associated with the %r query" % (query, data), 'APP')
+        cherrypy.log("Savin to the databaseg %r data associated with the %r query" % (query, data), 'INFO')
         db_params = self.get_db_params_from_query(query)
         if not db_params:
             return None
@@ -71,7 +71,7 @@ class Root():
         if not query.startswith('/'):
             query = '/%s' % query
         query = os.path.abspath(query)
-        cherrypy.log('Data requested at: %s' % query, 'APP')
+        cherrypy.log('Data requested at: %s' % query, 'INFO')
         # Try to get data from the DB 
         data = self.get_data_from_db(query)
         # Else, get our data directly from the web service
@@ -79,7 +79,7 @@ class Root():
             data = self.get_data_from_ws(query)
             # Save these data to the DB
             self.save_to_db(query, data)
-        cherrypy.log('Data returned: %r' % data, 'APP')
+        cherrypy.log('Data returned: %r' % data, 'INFO')
         return data
 
 
@@ -108,12 +108,12 @@ class Root():
                   , 'Accept-Encoding': 'identity'
                   }
         query_url = full_url = '%s/%s' % (API_URL, query)
-        cherrypy.log('Calling the web service at %s' % query_url, 'APP')
+        cherrypy.log('Calling the web service at %s' % query_url, 'INFO')
         if params:
             full_url = '%s?%s' % (query_url, urlencode(params))
         h = Http()
         response, content = h.request(full_url, "GET", headers=headers)
-        cherrypy.log('Web service returned: %r' % [response, content], 'APP')
+        cherrypy.log('Web service returned: %r' % [response, content], 'INFO')
         data = json.loads(content)
         if type(data) is type({}):
             if 'data' in data:
@@ -135,7 +135,7 @@ class Root():
                 * http://msdn.microsoft.com/en-us/library/hh243649.aspx
                 * http://msdn.microsoft.com/en-us/library/hh243647.aspx
           """
-          cherrypy.log('Got a callback code: %r' % code, 'APP')
+          cherrypy.log('Got a callback code: %r' % code, 'INFO')
           # We've got a code, we're ready to exchange it to a true access token
           params = {
               'client_id': self.APP_CID,
@@ -150,7 +150,7 @@ class Root():
           response = urllib2.urlopen(request)
           body = response.read()
           creds = json.loads(body)
-          cherrypy.log('Callback code exchanged to: %r' % creds, 'APP')
+          cherrypy.log('Callback code exchanged to: %r' % creds, 'INFO')
           # Save the current credentials to the session
           for (k, v) in creds.items():
               cherrypy.session[k] = v
