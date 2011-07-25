@@ -10,5 +10,5 @@
 
 <p>All collected data will then be available to people connected to you by the contact social path.</p>
 
-<p><a href="${auth_url}">Login with your Windows Live account</a></p>
+<p><a href="${auth_url}" class="large blue awesome">Login with your Windows Live account &raquo;</a></p>
 
