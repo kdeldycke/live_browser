@@ -14,8 +14,7 @@
 <div id="Searchresult">
     This content will be replaced when pagination inits.
 </div>
-<div id="Pagination" class="pagination"></div>
-<div id="hiddenresult" style="display:none;">
+<div id="hiddenresult" class="hidden">
     <%
         # Pagination function inspired by http://stackoverflow.com/questions/3744451/is-this-how-you-paginate-or-is-there-a-better-algorithm/3744524#3744524
         def paginate(d, lenght):
@@ -29,7 +28,7 @@
         </div>
     %endfor
 </div>
-<div class="clearfix"></div>
+<div id="Pagination" class="pagination clearfix"></div>
 
 
 <h2>Contacts</h2>
