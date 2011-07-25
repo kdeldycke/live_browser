@@ -12,7 +12,7 @@
         <ul>
             %if type(data) is type({}):
                 %for (k, v) in data.items():
-                    <li>${render_id(k)}: ${render_as_list(v)}</li>
+                    <li><span class="label">${render_id(k)}</span>: ${render_as_list(v)}</li>
                 %endfor
             %else:
                 %for i in data:

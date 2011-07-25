@@ -8,7 +8,7 @@
 <h1>${profile_info.get('name')}'s profile</h1>
 
 
-<h2>Profile details</h2>
+<h2>Details</h2>
 
 ## Pagination code taken from https://github.com/gbirke/jquery_pagination/blob/master/src/demo/demo.htm
 <div id="Searchresult">

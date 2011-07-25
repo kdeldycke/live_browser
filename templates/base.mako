@@ -50,17 +50,19 @@
         </div>
 
         <footer>
-            <p>Debug info:</p>
-            <ul>
-                <li>Number of active session: ${len(cherrypy.session)}</li>
-            </ul>
-            <p>Session data:</p>
-            <ul>
-                <li>Session ID: ${cherrypy.session.id}</li>
-                %for (k, v) in cherrypy.session.items():
-                    <li>${k}: ${v}</li>
-                %endfor
-            </ul>
+            <div class="error">
+                <p>Debug info:</p>
+                <ul>
+                    <li>Number of active session: ${len(cherrypy.session)}</li>
+                </ul>
+                <p>Session data:</p>
+                <ul>
+                    <li>Session ID: ${cherrypy.session.id}</li>
+                    %for (k, v) in cherrypy.session.items():
+                        <li>${k}: ${v}</li>
+                    %endfor
+                </ul>
+            </div>
         </footer>
 
     </div>
