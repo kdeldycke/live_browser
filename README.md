@@ -31,9 +31,9 @@ Windows Live API
 
 I created an authorization token via the `rwzwiybgu3hibsr@jetable.org` account. Here are the details:
 
-  * Application name : Live Browser
-  * Client ID        : 000000004C05390D
-  * Client secret    : fiMIb91LhBu9T5LPk4hPd2QaqKXLTY4a
+  * Application name : `Live Browser`
+  * Client ID        : `000000004C05390D`
+  * Client secret    : `fiMIb91LhBu9T5LPk4hPd2QaqKXLTY4a`
 
 To get new tokens, go to: https://manage.dev.live.com
 
@@ -44,19 +44,19 @@ Installation
 1. Install system dependencies using your favorite package manager. Here is the
    example for an Ubuntu machine:
 
-     $ apt-get install python python-httplib2 python-pyopenssl mongodb-server
+     `$ apt-get install python python-httplib2 python-pyopenssl mongodb-server`
 
 2. Initialize the buildout environment:
 
-     $ python ./bootstrap.py --distribute
+     `$ python ./bootstrap.py --distribute`
 
 3. Run buildout itself:
 
-     $ ./bin/buildout
+     `$ ./bin/buildout`
 
 4. Launch the app:
 
-     $ ./bin/live_browser
+     `$ ./bin/live_browser`
 
 
 HTML5 Boilerplate
@@ -77,18 +77,18 @@ Embedded external projects
 
 This tool uses external softwares, scripts, libraries and artworks:
 
-  HTML5 Boilerplate  
-  Copyright (c) 2010-2011, HTML5 Boilerplate project & contributors  
-  Components distributed under several license (MIT, BSD, GPL and Public Domain).  
-  Source: http://html5boilerplate.com
+    HTML5 Boilerplate  
+    Copyright (c) 2010-2011, HTML5 Boilerplate project & contributors  
+    Components distributed under several license (MIT, BSD, GPL and Public Domain).  
+    Source: http://html5boilerplate.com
 
-  jQuery Pagination plugin  
-  Copyright 2010-2011, birke@d-scribe.de  
-  Released under the GNU GPL v2 license.  
-  Source: https://github.com/gbirke/jquery_pagination
+    jQuery Pagination plugin  
+    Copyright 2010-2011, birke@d-scribe.de  
+    Released under the GNU GPL v2 license.  
+    Source: https://github.com/gbirke/jquery_pagination
 
-  Buildout's bootstrap.py  
-  Copyright (c) 2006, Zope Corporation and Contributors  
-  Distributed under the Zope Public License, version 2.1 (ZPL).  
-  Source: http://svn.zope.org/repos/main/zc.buildout/trunk/bootstrap/bootstrap.py
+    Buildout's bootstrap.py  
+    Copyright (c) 2006, Zope Corporation and Contributors  
+    Distributed under the Zope Public License, version 2.1 (ZPL).  
+    Source: http://svn.zope.org/repos/main/zc.buildout/trunk/bootstrap/bootstrap.py
 
