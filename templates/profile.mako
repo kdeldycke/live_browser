@@ -22,7 +22,7 @@
             for start in xrange(0, len(seq), lenght):
                 yield dict(seq[start:start+lenght])
     %>
-    %for page_content in paginate(profile_info, 5):
+    %for page_content in paginate(utils.remove_cruft(profile_info), 5):
         <div class="result">
             ${utils.render_as_list(page_content)}
         </div>
