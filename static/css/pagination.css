@@ -1,3 +1,7 @@
+.pagination {
+  margin-bottom: 1em;
+}
+
 .pagination a {
     text-decoration: none;
 	border: solid 1px #AAE;
