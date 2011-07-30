@@ -33,7 +33,7 @@
 
 <h2>Contacts</h2>
 
-%if 'error' in contacts:
+%if utils.is_error(contacts):
     ${utils.render_error(contacts)}
 %else:
     <ul>

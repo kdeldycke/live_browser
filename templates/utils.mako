@@ -49,10 +49,15 @@
 </%def>
 
 
-<%def name="render_error(error)">
+<%def name="is_error(content)">
     <%
-        error = error['error']
+        from db import WSException
+        return isinstance(content, WSException)
     %>
-    <p class='error'>${error['message']} (code: <code>${error['code']}</code>)</p>
+</%def>
+
+
+<%def name="render_error(error)">
+    <p class='error'>${error.message} (code: <code>${error.code}</code>)</p>
 </%def>
 
