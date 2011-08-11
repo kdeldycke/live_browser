@@ -72,6 +72,17 @@ Installation
         $ ./bin/live_browser
 
 
+TODO
+----
+
+  * Upgrade HTML5 Boilerplate to v2.0
+  * Replace the "Awesome Button" by a Call-to-Action button (source: http://pixify.com/blog/increase-conversions-with-call-to-action-buttons/ )
+  * When saving to MongoDB the data coming from the contact API, update the inverse reference of all contacts. Better yet: use MongoDB internal reference type to point to another contact (but I'm not sure I can point a reference to an object of the same collection).
+  * The v4.1 Live API seems to offer a lots more informations about the contact list of each user. Use it to fetch the social graph.
+  * Save the social network in a Neo4j database
+  * Draw the social network with the NetworkX library (see: http://networkx.lanl.gov/ )
+
+
 HTML5 Boilerplate
 -----------------
 
