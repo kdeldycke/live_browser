@@ -77,10 +77,16 @@ TODO
 
   * Upgrade HTML5 Boilerplate to v2.0
   * Replace the "Awesome Button" by a Call-to-Action button (source: http://pixify.com/blog/increase-conversions-with-call-to-action-buttons/ )
+  * Use Jquery UI transitions to fade and morph pages of the paginated list of properties available on each profile.
+  * Add a simple profile search form based on email addresses.
+  * Enhance the search form to let us add details criterion (age, name, employer, ...).
+  * Add a crawler to automaticcaly get and save info we can get from an entered mail address.
+  * Feed the crawler with something like http://www.tux-planet.fr/lulzsec-devoile-62-000-mots-de-passe/
   * When saving to MongoDB the data coming from the contact API, update the inverse reference of all contacts. Better yet: use MongoDB internal reference type to point to another contact (but I'm not sure I can point a reference to an object of the same collection).
   * The v4.1 Live API seems to offer a lots more informations about the contact list of each user. Use it to fetch the social graph.
   * Save the social network in a Neo4j database
   * Draw the social network with the NetworkX library (see: http://networkx.lanl.gov/ )
+  * Add OpenStreetMap integration.
 
 
 HTML5 Boilerplate
