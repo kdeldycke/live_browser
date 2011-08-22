@@ -85,6 +85,7 @@ TODO
   * When saving to MongoDB the data coming from the contact API, update the inverse reference of all contacts. Better yet: use MongoDB internal reference type to point to another contact (but I'm not sure I can point a reference to an object of the same collection).
   * The v4.1 Live API seems to offer a lots more informations about the contact list of each user. Use it to fetch the social graph.
   * Save the social network in a Neo4j database
+  * Use Bulbflow: http://bulbflow.com
   * Draw the social network with the NetworkX library (see: http://networkx.lanl.gov/ )
   * Add OpenStreetMap integration.
 
