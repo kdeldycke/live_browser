@@ -118,8 +118,8 @@ http://html5boilerplate.com with the following parameters:
   * Google analytics: Analytics snippet
 
 
-Embedded external projects
---------------------------
+License
+-------
 
 This tool uses external softwares, scripts, libraries and artworks:
 
@@ -143,3 +143,5 @@ This tool uses external softwares, scripts, libraries and artworks:
         Distributed under the Zope Public License, version 2.1 (ZPL).
         Source: http://svn.zope.org/repos/main/zc.buildout/trunk/bootstrap/bootstrap.py
 
+All other content is licensed under the [GNU General Public License v2 or later
+(GPLv2+)](LICENSE).
